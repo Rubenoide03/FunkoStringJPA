@@ -1,4 +1,4 @@
-package dev.ruben.dto;
+package dev.ruben.funkos.dto;
 
 import lombok.Builder;
 import lombok.Data;

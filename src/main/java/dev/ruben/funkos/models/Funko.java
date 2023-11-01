@@ -1,5 +1,6 @@
-package dev.ruben.models;
+package dev.ruben.funkos.models;
 
+import dev.ruben.categorias.models.Categoria;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Entity
+
 public class Funko {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +39,9 @@ public class Funko {
     private LocalDateTime createdAt;
     @Column(name="updatedAt", nullable = true)
     private LocalDateTime updatedAt;
-
+    @ManyToOne
+    @JoinColumn(name = "id", nullable = false)
+    private Categoria categoria;
 
 
 

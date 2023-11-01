@@ -1,9 +1,8 @@
-package dev.ruben.services;
+package dev.ruben.funkos.services;
 
-import dev.ruben.dto.FunkoCreateDTO;
-import dev.ruben.dto.FunkoUpdateDTO;
-import dev.ruben.models.Funko;
-import org.springframework.stereotype.Service;
+import dev.ruben.funkos.dto.FunkoCreateDTO;
+import dev.ruben.funkos.dto.FunkoUpdateDTO;
+import dev.ruben.funkos.models.Funko;
 
 import java.util.List;
 

@@ -1,10 +1,9 @@
-package dev.ruben.repositories;
+package dev.ruben.categorias;
 
-import dev.ruben.models.Categoria;
+import dev.ruben.categorias.models.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
 import java.util.Optional;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria, Long>{

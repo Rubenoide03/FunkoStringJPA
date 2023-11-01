@@ -1,16 +1,16 @@
-package dev.ruben.mappers;
+package dev.ruben.funkos.mappers;
 
-import dev.ruben.dto.FunkoCreateDTO;
-import dev.ruben.dto.FunkoResponseDTO;
-import dev.ruben.dto.FunkoUpdateDTO;
-import dev.ruben.models.Categoria;
-import dev.ruben.models.Funko;
+import dev.ruben.funkos.dto.FunkoCreateDTO;
+import dev.ruben.funkos.dto.FunkoResponseDTO;
+import dev.ruben.funkos.dto.FunkoUpdateDTO;
+import dev.ruben.categorias.models.Categoria;
+import dev.ruben.funkos.models.Funko;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 @Component
 public class FunkoMapper {
-    public Funko toFunko(FunkoCreateDTO dto,Categoria categoria){
+    public Funko toFunko(FunkoCreateDTO dto, Categoria categoria){
         return Funko.builder()
                 .name(dto.getName())
                 .price(dto.getPrice())

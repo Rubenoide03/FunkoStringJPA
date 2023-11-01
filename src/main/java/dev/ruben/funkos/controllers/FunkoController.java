@@ -1,9 +1,9 @@
-package dev.ruben.controllers;
+package dev.ruben.funkos.controllers;
 
-import dev.ruben.dto.FunkoCreateDTO;
-import dev.ruben.dto.FunkoUpdateDTO;
-import dev.ruben.models.Funko;
-import dev.ruben.services.FunkoService;
+import dev.ruben.funkos.dto.FunkoCreateDTO;
+import dev.ruben.funkos.dto.FunkoUpdateDTO;
+import dev.ruben.funkos.models.Funko;
+import dev.ruben.funkos.services.FunkoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,9 +31,15 @@ public class FunkoController {
         return ResponseEntity.ok(funkoService.findAll());
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Funko> findById(Long id){
-        log.info("Finding funko by id");
-        return ResponseEntity.ok(funkoService.findById(id));
+    public ResponseEntity<Funko> findById(Long id) {
+        try {
+            log.info("Finding funko by id");
+            return ResponseEntity.ok(funkoService.findById(id));
+
+        }catch (Exception e){
+            log.error("Error al buscar el funko");
+            return ResponseEntity.badRequest().build();
+        }
     }
     @PostMapping
     public ResponseEntity<Funko> save(FunkoCreateDTO funkoCreateDTO){
@@ -47,14 +53,16 @@ public class FunkoController {
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(Long id){
-        log.info("Borrando Funko");
-        funkoService.deleteById(id);
-        return ResponseEntity.noContent().build();
-    }
-    @GetMapping("/{name}")
-    public ResponseEntity<Funko> findByName(String name){
-        log.info("Finding funko by name");
-        return ResponseEntity.ok(funkoService.findByName(name));
-    }
+        try{log.info("Borrando Funko");
+            funkoService.deleteById(id);
+            return ResponseEntity.noContent().build();
+
+        }catch (Exception e){
+            log.error("Error al borrar el funko");
+            return ResponseEntity.badRequest().build();
+
+    }}
+
+
 
 }

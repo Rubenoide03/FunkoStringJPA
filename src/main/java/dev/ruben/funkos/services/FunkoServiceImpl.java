@@ -1,14 +1,14 @@
-package dev.ruben.services;
+package dev.ruben.funkos.services;
 
-import dev.ruben.dto.FunkoCreateDTO;
-import dev.ruben.dto.FunkoUpdateDTO;
-import dev.ruben.exceptions.FunkoNotFoundException;
-import dev.ruben.mappers.FunkoMapper;
-import dev.ruben.models.Categoria;
-import dev.ruben.models.Funko;
-import dev.ruben.repositories.FunkoRepository;
+import dev.ruben.categorias.CategoriaService;
+import dev.ruben.funkos.dto.FunkoCreateDTO;
+import dev.ruben.funkos.dto.FunkoUpdateDTO;
+import dev.ruben.funkos.exceptions.FunkoNotFoundException;
+import dev.ruben.funkos.mappers.FunkoMapper;
+import dev.ruben.categorias.models.Categoria;
+import dev.ruben.funkos.models.Funko;
+import dev.ruben.funkos.repositories.FunkoRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
