@@ -1,6 +1,6 @@
 package dev.ruben.funkos.services;
 
-import dev.ruben.categorias.CategoriaService;
+import dev.ruben.categorias.services.CategoriaService;
 import dev.ruben.funkos.dto.FunkoCreateDTO;
 import dev.ruben.funkos.dto.FunkoUpdateDTO;
 import dev.ruben.funkos.exceptions.FunkoNotFoundException;
@@ -85,7 +85,7 @@ public class FunkoServiceImpl implements FunkoService{
         var funko = this.findById(id);
         Categoria categoria= null;
         if(funkoUpdateDTO.getCategory()!=null){
-            categoria=categoriaService.findByNombre(funkoUpdateDTO.getCategory());
+            categoria=categoriaService.findByNombre(funkoUpdateDTO.getCategory().getName());
 
         }
         return funkoMapper.toFunko(funkoUpdateDTO,funko,categoria);

@@ -1,5 +1,6 @@
-package dev.ruben.categorias;
+package dev.ruben.categorias.mappers;
 
+import dev.ruben.categorias.dto.CategoriaDTO;
 import dev.ruben.categorias.models.Categoria;
 import org.springframework.stereotype.Component;
 
@@ -21,5 +22,10 @@ public class CategoriaMapper {
 
 
         );
+    }
+    public CategoriaDTO toCategoriaDTO(Categoria categoria){
+        return CategoriaDTO.builder()
+                .name(categoria.getName())
+                .build();
     }
 }

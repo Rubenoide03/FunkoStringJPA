@@ -1,9 +1,11 @@
 package dev.ruben.services;
 
+import dev.ruben.categorias.models.Categoria;
 import dev.ruben.funkos.models.Funko;
 import dev.ruben.funkos.repositories.FunkoRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -14,11 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class FunkoServiceImplTest {
     private List<Funko> funkos;
+    Categoria categoria = Categoria.builder()
+            .id(1L)
+            .name("Categoria")
+            .build();
 
     private final Funko funko1 = Funko.builder()
             .id(1L)
             .name("Funko 1")
-            .category("Category 1")
+            .categoria(categoria)
             .price(10.0)
             .stock(10)
             .image("Image 1")
@@ -41,6 +47,7 @@ class FunkoServiceImplTest {
                 () -> assertEquals(1, funkos.size()),
         () -> assertFalse(funkos.isEmpty())
         );
+        Mockito.verify(funkoRepository, Mockito.times(1)).findAll();
 
 
 
@@ -57,6 +64,7 @@ class FunkoServiceImplTest {
                 () ->assertTrue(funko.isPresent())
 
         );
+
     }
 
     @Test

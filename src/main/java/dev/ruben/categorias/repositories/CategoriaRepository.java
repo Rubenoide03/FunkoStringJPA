@@ -1,4 +1,4 @@
-package dev.ruben.categorias;
+package dev.ruben.categorias.repositories;
 
 import dev.ruben.categorias.models.Categoria;
 import org.springframework.data.jpa.repository.JpaRepository;

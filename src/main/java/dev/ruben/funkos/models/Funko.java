@@ -32,15 +32,12 @@ public class Funko {
     private Integer stock;
     @Column(name="image", nullable = false)
     private String image;
-    @Column(name="category", nullable = false)
-    @NotBlank(message = "La categoría no puede estar vacía")
-    private String category;
     @Column(name="createdAt", nullable = true)
     private LocalDateTime createdAt;
     @Column(name="updatedAt", nullable = true)
     private LocalDateTime updatedAt;
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 
 

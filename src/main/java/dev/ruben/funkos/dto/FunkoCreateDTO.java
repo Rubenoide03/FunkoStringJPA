@@ -1,5 +1,6 @@
 package dev.ruben.funkos.dto;
 
+import dev.ruben.categorias.models.Categoria;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import lombok.Builder;
@@ -23,7 +24,7 @@ public class FunkoCreateDTO {
     @NotBlank(message = "La imagen no puede estar vacía")
     private String image;
     @NotBlank(message = "La categoría no puede estar vacía")
-    private String category;
+    private Categoria category;
 
 
 }

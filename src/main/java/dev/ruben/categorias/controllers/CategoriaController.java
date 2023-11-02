@@ -1,8 +1,8 @@
 package dev.ruben.categorias.controllers;
 
 import dev.ruben.categorias.models.Categoria;
-import dev.ruben.categorias.CategoriaDTO;
-import dev.ruben.categorias.CategoriaService;
+import dev.ruben.categorias.dto.CategoriaDTO;
+import dev.ruben.categorias.services.CategoriaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

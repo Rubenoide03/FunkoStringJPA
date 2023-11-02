@@ -1,4 +1,4 @@
-package dev.ruben.categorias;
+package dev.ruben.categorias.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

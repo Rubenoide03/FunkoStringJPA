@@ -16,7 +16,7 @@ public class FunkoMapper {
                 .price(dto.getPrice())
                 .stock(dto.getStock())
                 .image(dto.getImage())
-                .category(dto.getCategory())
+                .categoria(categoria)
                 .build();
     }
     public Funko toFunko(FunkoCreateDTO dto){
@@ -25,7 +25,6 @@ public class FunkoMapper {
                 .price(dto.getPrice())
                 .stock(dto.getStock())
                 .image(dto.getImage())
-                .category(dto.getCategory())
                 .build();
     }
     public Funko toFunko(FunkoUpdateDTO dto, Funko funko, Categoria categoria) {
@@ -36,7 +35,7 @@ public class FunkoMapper {
                 .stock(dto.getStock() != null ? dto.getStock() : funko.getStock())
                 .createdAt(funko.getCreatedAt())
                 .updatedAt(LocalDateTime.now())
-                .category(dto.getCategory() !=null ? dto.getCategory() : funko.getCategory())
+                .categoria(dto.getCategory() !=null ? dto.getCategory() : funko.getCategoria())
                 .build();
     }
     public FunkoResponseDTO toFunkoResponseDto(Funko funko){
@@ -47,7 +46,23 @@ public class FunkoMapper {
                 .stock(funko.getStock())
                 .createdAt(funko.getCreatedAt())
                 .updatedAt(LocalDateTime.now())
-                .category(funko.getCategory())
+                .category(funko.getCategoria())
+                .build();
+    }
+    public FunkoCreateDTO toFunkoCreateDto(Funko funko){
+        return FunkoCreateDTO.builder()
+                .name(funko.getName())
+                .price(funko.getPrice())
+                .stock(funko.getStock())
+                .image(funko.getImage())
+                .build();
+    }
+    public FunkoUpdateDTO toFunkoUpdateDto(Funko funko){
+        return FunkoUpdateDTO.builder()
+                .name(funko.getName())
+                .price(funko.getPrice())
+                .stock(funko.getStock())
+                .category(funko.getCategoria())
                 .build();
     }
 }

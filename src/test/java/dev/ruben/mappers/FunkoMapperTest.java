@@ -21,4 +21,7 @@ class FunkoMapperTest {
     @Test
     void toFunkoResponseDto() {
     }
+    @Test
+    void toFunkoCreateDto() {
+    }
 }

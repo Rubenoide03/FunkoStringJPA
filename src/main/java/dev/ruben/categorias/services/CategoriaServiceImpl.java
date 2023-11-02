@@ -1,6 +1,10 @@
-package dev.ruben.categorias;
+package dev.ruben.categorias.services;
 
+import dev.ruben.categorias.dto.CategoriaDTO;
+import dev.ruben.categorias.exceptions.CategoriaNotFoundException;
+import dev.ruben.categorias.mappers.CategoriaMapper;
 import dev.ruben.categorias.models.Categoria;
+import dev.ruben.categorias.repositories.CategoriaRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

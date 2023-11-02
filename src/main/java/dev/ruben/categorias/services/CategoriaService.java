@@ -1,5 +1,6 @@
-package dev.ruben.categorias;
+package dev.ruben.categorias.services;
 
+import dev.ruben.categorias.dto.CategoriaDTO;
 import dev.ruben.categorias.models.Categoria;
 
 import java.util.List;
